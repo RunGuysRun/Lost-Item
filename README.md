@@ -57,6 +57,8 @@ npm run dev
 
 เปิดเว็บที่ <http://localhost:3000>
 
+หากพบว่า Next.js แจ้ง `Cannot find module '@tailwindcss/postcss'` ให้รัน `npm install` แล้วล้าง cache ด้วยคำสั่ง `Remove-Item -Recurse -Force .next` (Windows PowerShell) ก่อนเริ่ม `npm run dev` ใหม่
+
 ## ตัวแปรใน `backend/.env`
 
 | ตัวแปร         | ความหมาย                        | ค่าตัวอย่าง                                               |
@@ -127,6 +129,9 @@ docker exec lostitem-db psql -U lostitem -c \
 ## ความคืบหน้า
 
 - [x] Frontend: Navbar แยกตาม role และหน้าครบทุกเมนู (ยังเป็นหน้าเปล่า / ข้อมูลตัวอย่าง)
+- [x] Frontend: แก้ JSX ให้ใช้ `className` ใน Navbar ถูกต้อง
+- [x] Frontend: แก้ Navbar ไม่ใช้ `<template>`/`<slot />` เพื่อป้องกัน hydration mismatch
+- [x] Frontend: เพิ่ม comment แบ่งส่วน Navbar ใน `frontend/src/app/navbar.js`
 - [x] Backend: Express + PostgreSQL (Docker)
 - [x] Backend: สมัคร / เข้าสู่ระบบ / ออกจากระบบ (JWT ใน cookie)
 - [x] Frontend: หน้า login / register / logout ต่อกับ API แล้ว และ Navbar แสดงเมนูตาม role ของผู้ใช้จริง
