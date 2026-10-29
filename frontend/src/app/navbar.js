@@ -21,7 +21,7 @@ export default function Navbar({ user = null }) {
   const items = MENUS.filter((m) => !m.roles || m.roles.includes(role));
 
   const linkClass = (href) =>
-    `px-3 py-2 rounded-md text-sm ${pathname === href ? 'bg-blue-600 text-white' : 'hover:bg-gray-200'
+    `px-3.5 py-2 rounded-xl text-xs font-semibold ${pathname === href ? 'bg-blue-600 text-white' : 'hover:bg-white/10 text-slate-200 transition whitespace-nowrap'
     }`;
 
   return (
